@@ -43,11 +43,12 @@
           \and
           C. Marmo\inst{4}
           \and
-          J. Vaubaillon\inst{5}
+          M. Garnung\inst{5}
+          J. Vaubaillon\inst{6}
           \and
-          N. Andr\'e\inst{6}
+          N. Andr\'e\inst{7}
           \and
-          M. Gangloff\inst{6}
+          M. Gangloff\inst{7}
           }
 
    \institute{LESIA, Observatoire de Paris, Universit\'e PSL, CNRS, Sorbonne Universit\'e, Univ. Paris Diderot, Sorbonne Paris Cit\'e, 
@@ -61,6 +62,9 @@
 	          \email{\href{mailto:tomasik@cbk.waw.pl}{tomasik@cbk.waw.pl}}
 	     \and
 	          GEOPS, CNRS, Universit\'e Paris-Sud, Universit\'e Paris Saclay, Orsay, France\\
+	          \email{\href{mailto:mgarnung@cnrs-orleans.fr}{mgarnung@cnrs-orleans.fr}}
+	     \and
+	          LPL2E, CNRS, Universit\'e d'Orl\'eans, Orl\'eans, France\\
 	          \email{\href{mailto:chiara.marmo@u-psud.fr}{chiara.marmo@u-psud.fr}}
 	     \and
 	          IMCCE, Observatoire de Paris, Universit\'e PSL, CNRS, France\\
@@ -219,7 +223,7 @@ Several camera networks already exist in Europe and around the world, aiming to 
 
 Transient Luminous Events (TLEs) are large-scale optical events occurring in the upper-atmosphere from the top of thunderclouds up to the ionosphere. They are sometimes accompanied by terrestrial gamma-ray flashes (TGFs). TLEs may have important effects in local, regional, and global scales of the atmosphere, but many features of TLEs are not fully understood yet. TARANIS is a CNES satellite project dedicated to the study of impulsive transfers of energy between the Earth atmosphere and the space environment. The TARANIS microsatellite will fly over thousands of TLEs and TGFs for at least two years. Its scientific instruments will be capable of detecting these events and recording their luminous and radiative signatures, as well as the electromagnetic perturbations they set off in Earth's upper atmosphere. Coupling TLEs observation to the already existent meteor detection networks, will allow the observation of TLEs over unprecedented space and time scales \cite{2017AGUFMAE23A2469G}, strongly increasing the probability of joint detection and hence the scientific return of space missions such as TARANIS or the ESA ASIM (Atmosphere-Space Interactions Monitor) instrument onboard the ISS (International Space Station) \cite{2009AIPC.1118....8N}.
 
-Appendix \ref{appendix-xml-voevent-tle} shows a preliminary VOEvent message for a meteor detection, using the meteor and TLE detection FreeTure \cite{2014pim4.conf...39A} software. 
+Appendices \ref{appendix-xml-voevent-meteor-freeture} and  \ref{appendix-xml-voevent-tle-freeture} show a preliminary VOEvent messages for a meteor and TLE detections, using the FreeTure \cite{2014pim4.conf...39A} detection software. 
 
 \section{Discussion and Perspectives}
 
@@ -236,7 +240,9 @@ As a final word, we plan to reach the general public with broadcasting part of t
 
 \appendix
 
-\section{VOEvent example for a Meteor Shower alert at Mars}
+\section{VOEvent examples}
+
+\subsection{Example for a Meteor Shower alert at Mars}
 \label{appendix-xml-voevent-meteor}
 
 VOEvent example for a Meteor Shower alert at Mars produced by a trail of comet 2006 AR3. The maximum of event is predicted to occur on 2018-09-08T18:25:00.
@@ -362,7 +368,7 @@ Possible implementation of the {\tt <WhereWhen>} entity in the Meteor Shower pre
 \end{verbatim}
 }
 
-\section{VOEvent example for RWC daily forecast}
+\subsection{Example for RWC daily forecast}
 \label{appendix-xml-voevent-rwc}
 
 VOEvent example for RWC daily forecast on September 7th 2017.
@@ -430,7 +436,7 @@ VOEvent example for RWC daily forecast on September 7th 2017.
 \end{verbatim}
 }
 
-\section{VOEvent example for Solar Wind event at Jupiter}
+\subsection{Example for Solar Wind event at Jupiter}
 \label{appendix-xml-voevent-tao}
 VOEvent example for Solar Wind dynamic pressure pulses at Jupiter, as modeled by the Tao 1D MHD propagation code \cite{Tao:2005dp}, for October 2018
 
@@ -463,7 +469,7 @@ VOEvent example for Solar Wind dynamic pressure pulses at Jupiter, as modeled by
       </Group>
       <Table>
          <Description>Time intervals found by the propagation code</Description>
-         <Field dataType="string" name="Start Time" ucd="time.begin" utype="epn:time_min">
+         <Field dataType="string" name="Start Time" ucd="time.start" utype="epn:time_min">
             <Description>time tag for beginning of interval</Description>
          </Field>
          <Field dataType="string" name="Stop Time" ucd="time.end" utype="epn:time_max">
@@ -509,8 +515,8 @@ VOEvent example for Solar Wind dynamic pressure pulses at Jupiter, as modeled by
 \end{verbatim}
 }
 
-\section{VOEvent example for a meteor detection}
-\label{appendix-xml-voevent-tle}
+\subsection{Example for a meteor detection}
+\label{appendix-xml-voevent-meteor-freeture}
 VOEvent example for a meteor detection using the meteor and TLE detection FreeTure \cite{2014pim4.conf...39A} software.
 
 {\tiny 
@@ -658,6 +664,84 @@ VOEvent example for a meteor detection using the meteor and TLE detection FreeTu
 </voe:VOEvent>
 \end{verbatim}
 }
+
+\subsection{Example for a Trans-Luminous Event detection}
+\label{appendix-xml-voevent-tle-freeture}
+VOEvent example for a meteor detection using the meteor and TLE detection FreeTure \cite{2014pim4.conf...39A} software.
+
+{\tiny 
+\begin{verbatim}
+<?xml version="1.0" encoding="UTF-8"?>
+<voe:VOEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:voe="http://www.ivoa.net/xml/VOEvent/v2.0"
+    xsi:schemaLocation="http://www.ivoa.net/xml/VOEvent/v2.0 http://www.ivoa.net/xml/VOEvent/VOEvent-v2.0.xsd"
+    version="2.0" role="test" ivorn="ivo://freeture.io.myobs/tle_events#123">
+
+    <Who>
+        <AuthorIVORN>ivo://freeture.io.myobs</AuthorIVORN>
+        <Date>2018-03-20T00:03:21</Date>
+        <Author>
+            <title>FreeTure TLE VOEvent</title>
+            <contactName>Matthieu Garnung</contactName>
+            <contactEmail>matthieu.garnung@cnrs-orleans.fr</contactEmail>
+            <contributor>S.Celestin, sebastien.celestin@cnrs-orleans.fr</contributor>
+        </Author>
+    </Who>
+
+    <What>
+        <Group name="event parameters">
+            <Param dataType="float" name="Median position x" ucd="pos.cartesian.x;meta.main"
+                unit="pixel" value="307.56"/>
+            <Param dataType="float" name="Median position y" ucd="pos.cartesian.y;meta.main"
+                unit="pixel" value="258.97"/>
+        </Group>
+        <Group name="instrument">
+            <Param dataType="string" name="camera_model" ucd="meta.id" value="DMK"/>
+            <Param dataType="string" name="network" ucd="meta.ref" value="mycameranetwork"/>
+            <Param dataType="string" name="sensor_model" ucd="instr.det;meta.id" value="ICX"/>
+            <Param dataType="float" name="pixel_size" ucd="instr.pixel" value="3.5e-6" unit="m"/>
+            <Param dataType="int" name="frame_size" ucd="instr.param" value="1280,960" unit="px"/>
+            <Param dataType="int" name="bit_depth" ucd="instr.param" value="12" unit="bits"/>
+            <Param dataType="string" name="color_flag" ucd="instr.para;meta.code" value="False"/>
+        </Group>
+    </What>
+
+    <WhereWhen>
+        <ObsDataLocation>
+            <ObservatoryLocation id="myobs">
+                <AstroCoordSystem id="UTC-GEOD-TOPO"/>
+                <AstroCoords coord_system_id="UTC-GEOD-TOPO">
+                    <Position3D unit="deg deg m">
+                        <Value3>
+                            <C1>248.4056</C1>
+                            <C2>31.9586</C2>
+                            <C3>2158</C3>
+                        </Value3>
+                    </Position3D>
+                </AstroCoords>
+            </ObservatoryLocation>
+            <ObservationLocation>
+                <AstroCoordSystem id="UTC-ICRS-TOPO"/>
+                <AstroCoords coord_system_id="UTC-ICRS-TOPO">
+                    <Time unit="s">
+                        <TimeInstant>
+                            <ISOTime>2018-03-19T23:55:21.3657</ISOTime>
+                        </TimeInstant>
+                    </Time>
+                </AstroCoords>
+            </ObservationLocation>
+        </ObsDataLocation>
+    </WhereWhen>
+    <How>
+        <Description>DMK camera from mycameranetwork, using ICX sensor.</Description>
+    </How>
+    <Why>
+        <Description>Possible transient luminous event</Description>
+    </Why>
+</voe:VOEvent>
+\end{verbatim}
+}
+
 
 \end{linenumbers}
 \end{document}
