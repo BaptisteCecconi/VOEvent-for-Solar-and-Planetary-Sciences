@@ -156,7 +156,7 @@ The PSWS team has build a redundant broker using Paris Astronomical Data Centre 
 
 %On the frame of Europlanet we have developed tools to help building VOEevent from a specific forms, from python dictionaries...
 
-As VOEvent is a message sent once and with no persistent trace, we use the VESPA infrastructure to store event metadata together with a link to the original VOEvent XML file. Each event will be referred to with its identifier, which must be unique. Each VOEvent author source have a dedicated EPNcore metadata catalogue table reachable with TAP (Table Access Protocol), following VESPA (Virtual European Solar and Planetary Access) recommendation \cite{vespa}.
+As VOEvent is a message sent once and with no persistent trace, we use the VESPA infrastructure to store event metadata together with a link to the original VOEvent XML file. Each event will be referred to with its {\tt ivorn} identifier, which must be unique. Each VOEvent author source have a dedicated EPNcore metadata catalogue table reachable with TAP (Table Access Protocol), following VESPA (Virtual European Solar and Planetary Access) recommendation \cite{vespa}.
 
 This allows to make data mining in previously posted VOEvents (observations or predictions), e.g., look for meteor shower at Mars during the full 2020 year. The corresponding ADQL \cite{adql} query would be:
 \begin{verbatim}
