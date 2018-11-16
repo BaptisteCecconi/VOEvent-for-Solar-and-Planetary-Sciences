@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<voe:VOEvent xmlns:voe="http://www.ivoa.net/xml/VOEvent/v2.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   ivorn="ivo://src.pas/ssa/voe/wa2voe/170906wa/0" role="prediction" version="2.0"
+   xsi:schemaLocation="http://www.ivoa.net/xml/VOEvent/v2.0 http://www.ivoa.net/xml/VOEvent/VOEvent-v2.0.xsd">
+   <Who>
+      <AuthorIVORN>ivo://src.pas/organization</AuthorIVORN>
+      <Date>2017-09-06T09:52:31</Date>
+   </Who>
+   <What>
+      <Description>Forecast of Solar-geophysical activity and propagation conditions</Description>
+      <Reference uri="http://rwc.cbk.waw.pl/rwc/170906wa.dre"/>
+      <Group name="Solar activity forecast">
+         <Description>1 day forecasts</Description>
+         <Param name="target_name" value="Sun" ucd="meta.id" utype="epn:target_name" dataType="string"/>
+         <Param name="time_min" value="2017-09-07T00:00:00" ucd="time.start" dataType="string" utype="epn:time_min"/>
+         <Param name="time_max" value="2017-09-08T00:00:00" ucd="time.end" dataType="string" utype="epn:time_max"/>
+         <Param name="activity" ucd="meta.code.class" unit="" value="high(4)" dataType="string"/>
+         <Param name="flares class C probability" ucd="stat.probability" unit="%" value="100"/>
+         <Param name="flares class M probability" ucd="stat.probability" unit="%" value="100"/>
+         <Param name="flares class X probability" ucd="stat.probability" unit="%" value="50"/>
+         <Param name="flares class p probability" ucd="stat.probability" unit="%" value="95"/>
+      </Group>
+      <Group name="Magnetic activity forecast">
+         <Description>1 day forecasts</Description>
+         <Param name="target_name" value="Earth" ucd="meta.id" utype="epn:target_name" dataType="string"/>
+         <Param name="time_min" value="2017-09-07T00:00:00" ucd="time.start" dataType="string" utype="epn:time_min"/>
+         <Param name="time_max" value="2017-09-08T00:00:00" ucd="time.end" dataType="string" utype="epn:time_max"/>
+         <Param name="Kp" ucd="meta.code.class;phys.magfield" unit="" value="5" dataType="string"/>
+      </Group>
+   </What>
+   <WhereWhen/>
+   <How>
+      <Description>Solar-geophysical prediction service RWC Warsaw - Regional Warning Centre of ISES</Description>
+      <Reference uri="http://rwc.cbk.waw.pl"/>
+   </How>
+   <Why importance="1.0" expires="2017-09-07T00:00:00">
+      <Concept>Solar and Geomagnetic Observations</Concept>
+      <Inference probability="1.0">
+         <Name>Solar Activity</Name>
+         <Concept>http://ontology.espas-fp7.eu/phenomenon/SolarActivity</Concept>
+         <Description>
+            Activity    : moderate(3)
+            Flares      : 5 class m, m2.3/1n 17.37-17.51, m3.8 06.33-06.43,
+            : m3.2 04.33-05.07, m4.2 01.03-01.11ut, c5.4 10.13-10.25ut,
+            : 2 class 1, 16 class 0
+         </Description>
+      </Inference>
+      <Inference probability="1.0">
+         <Name>Geomagnetic activity</Name>
+         <Concept>http://ontology.espas-fp7.eu/phenomenon/GeomagneticActivity</Concept>
+         <Description>
+            activity    : low k=2
+            storm       : -
+         </Description>
+      </Inference>
+   </Why>
+</voe:VOEvent>

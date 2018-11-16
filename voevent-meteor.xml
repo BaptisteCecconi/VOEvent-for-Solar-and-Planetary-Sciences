@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<voe:VOEvent ivorn="ivo://vodpc.obspm/imcce/meteorshower/event#MAR_AR3_2018_1102_0::v1.0"
+    role="prediction" version="2.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:voe="http://www.ivoa.net/xml/VOEvent/v2.0"
+    xsi:schemaLocation="http://www.ivoa.net/xml/VOEvent/v2.0 http://www.ivoa.net/xml/VOEvent/VOEvent-v2.0.xsd">
+    <Who>
+        <AuthorIVORN>ivo://vopdc.obspm</AuthorIVORN>
+        <Author>
+           <contactEmail>Jeremie.Vaubaillon@obspm.fr</contactEmail>
+           <contactPhone>+33-14051 2264</contactPhone>
+           <contactName>Jeremie Vaubaillon</contactName> 
+        </Author>
+        <Date>2018-10-31T18:27:47.157580Z</Date>
+    </Who>
+    <What>
+        <Description>Prediction of a meteor shower produced by a meteoroid stream from 2006 AR3 at Mars</Description>
+        <Reference  uri="http://cdsads.u-strasbg.fr/abs/2017P%26SS..143...78V" meaning="reference publication for prediction" type="string" />
+        <Group name="source">
+           <Param name="source_name" value="2006 AR3" ucd="meta.id" dataType="string" utype="epn:target_name"/>
+           <Param name="source_class" value="comet" ucd="meta.id" dataType="string" utype="epn:target_class"/>
+           <Param name="source_region" value="Trail" ucd="meta.id" dataType="string" utype="epn:target_region"/>
+        </Group>
+        <Group name="target">
+           <Param name="target_class" value="planet" ucd="meta.id" dataType="string" utype="epn:target_class"/>
+           <Param name="target_name" value="Mars" ucd="meta.id" dataType="string" utype="epn:target_name"/>
+           <Param name="target_region" value="Atmosphere" ucd="meta.id" dataType="string" utype="epn:target_region"/>
+           <Param name="spatial_frame_type" value="celestial" ucd="meta.code.class;pos.frame" dataType="string" utype="epn:spatial_frame_type"/>
+           <Param name="solar_longitude" value="152.220" ucd="pos.bodyrc.lon" dataType="string" utype="epn:solar_longitude" unit="deg"/>
+           <Param name="ra" value="345.422" ucd="pos.eq.ra" dataType="string" utype="epn:c1" unit="deg"/>
+           <Param name="s_ra" value="0.186" ucd="pos.eq.ra;stat.error" dataType="string" unit="deg"/>
+           <Param name="dec" value="-16.112" ucd="pos.eq.dec" dataType="string" utype="epn:c2" unit="deg"/>
+           <Param name="s_dec" value="0.084" ucd="pos.eq.dec;stat.error" dataType="string" unit="deg"/>
+           <Param name="spatial_origin" value="Mars" ucd="meta.id" dataType="string" utype="stc:AstroCoordSystem.SpaceFrame.ReferencePosition"/>
+           <Param name="time_origin" value="Mars" ucd="meta.id" dataType="string" utype="stc:AstroCoordSystem.TimeFrame.ReferencePosition"/>
+           <Param name="time_scale" value="UTC" ucd="time.scale" dataType="string" utype="epn:time_scale"/>
+           <Param name="space_ref_frame" value="ICRS" ucd="meta.id" dataType="string" utype="stc:AstroCoordSystem.SpaceFrame.SpaceRefFrame"/>
+           <Param name="astroCoordSystemID" value="UTC-ICRS-MARS_C" ucd="meta.id" dataType="string" utype="stc:AstroCoordSystem"/>
+        </Group>
+        <Group name="event">
+           <Param name="event_type" value="Prediction of a meteor shower produced by a meteoroid stream at a planet" ucd="meta.flag" 
+               dataType="string"/>
+           <Param name="event_status" value="median date of tail crossing" ucd="meta.flag" dataType="string"/>
+           <Param name="event_date" value="2018-09-08T18:25:00" ucd="time.epoch" dataType="string"/>
+           <Param name="shower" value="2006AR3ids" ucd="meta.name" dataType="string"/>
+           <Param name="showercode" value="AR3" ucd="meta.id" dataType="string"/>
+           <Param name="prediction_year" value="2018" ucd="time.epoch" dataType="string" unit="yr"/>
+           <Param name="begins_trail" value="1102" ucd="time.start" dataType="string"/>
+           <Param name="end_trail" value="1102" ucd="time.end" dataType="string"/>
+           <Param name="dist0" value="-0.03124" ucd="pos.distance" dataType="string" unit="AU"/>
+           <Param name="v_geo" value="14.782" ucd="pos.veloc" dataType="string" unit="km/s"/>
+           <Param name="s_v" value="0.118" ucd="pos.veloc;stat.error" dataType="string" unit="km/s"/>
+           <Param name="Zhr" value="0." ucd="meta.id" dataType="string"/>
+           <Param name="conf_id" value="SYO0/1CE0.00" ucd="meta.id" dataType="string"/>
+           <Param name="VOCode" value="MAR_AR3_2018_1102_0" ucd="meta.id" dataType="string"/>
+        </Group>
+    </What>
+    <WhereWhen/>
+    <How>
+        <Description>The ephemeris were produced by simluating the ejection of meteoroid from the sunlitt hemisphere of 
+            cometary nuclei, typically from 0 to 3 au, followed by the propagation of orbits of meteoroids in 
+            the Solar System, taking into account the gravitation of the Sun, the 8 planets, Pluto and the Moon, 
+            as well as the radiation pressure and the Poynting-Robertson drag. The showers are predicted when a 
+            planet enters a large enough number of meteoroids, at a distance less than typically 0.01 au.</Description>
+        <Reference uri="http://cdsads.u-strasbg.fr/abs/2017P%26SS..143...78V"/>
+        <Reference uri="https://doi.org/10.1051/0004-6361:20041544"/>
+        <Reference uri="https://doi.org/10.1051/0004-6361:20042626"/>
+    </How>
+    <Why>
+        <Concept>http://astrothesaurus.org/uat/1034</Concept>
+        <Name>Meteor Shower</Name>
+        <Inference relation="associated">
+            <Concept>http://astrothesaurus.org/uat/1035</Concept>
+            <Name>Meteor streams</Name>
+        </Inference>        
+    </Why>
+    <Description>Meteor Shower alert at Mars produced by a trail of 2006 AR3. Maximum of event: 2018-09-08T18:25:00</Description>
+</voe:VOEvent>

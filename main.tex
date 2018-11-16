@@ -18,6 +18,7 @@
 \modulolinenumbers[5]
 \usepackage[authoryear,round]{natbib}
 \usepackage[backref]{hyperref}
+\usepackage{verbatim}
 
 %%    This version assumes using bibtex with the swsc bibliography style file
 \bibliographystyle{swsc}
@@ -219,7 +220,7 @@ Several camera networks already exist in Europe and around the world, aiming to 
 
 Transient Luminous Events (TLEs) are large-scale optical events occurring in the upper-atmosphere from the top of thunderclouds up to the ionosphere. They are sometimes accompanied by terrestrial gamma-ray flashes (TGFs). TLEs may have important effects in local, regional, and global scales of the atmosphere, but many features of TLEs are not fully understood yet. TARANIS is a CNES satellite project dedicated to the study of impulsive transfers of energy between the Earth atmosphere and the space environment. The TARANIS microsatellite will fly over thousands of TLEs and TGFs for at least two years. Its scientific instruments will be capable of detecting these events and recording their luminous and radiative signatures, as well as the electromagnetic perturbations they set off in Earth's upper atmosphere. Coupling TLEs observation to the already existent meteor detection networks, will allow the observation of TLEs over unprecedented space and time scales \cite{2017AGUFMAE23A2469G}, strongly increasing the probability of joint detection and hence the scientific return of space missions such as TARANIS or the ESA ASIM (Atmosphere-Space Interactions Monitor) instrument onboard the ISS (International Space Station) \cite{2009AIPC.1118....8N}.
 
-Appendix \ref{appendix-xml-voevent-tle} shows a preliminary VOEvent message for a meteor detection, using the meteor and TLE detection FreeTure \cite{2014pim4.conf...39A} software. 
+Appendices \ref{appendix-xml-voevent-meteor-freeture} and \ref{appendix-xml-voevent-tle-freeture} show preliminary VOEvent messages for a meteor and a TLE detection, planned to be implemented in the meteor and TLE detection FreeTure \cite{2014pim4.conf...39A} software. 
 
 \section{Discussion and Perspectives}
 
@@ -244,86 +245,7 @@ As a final word, we plan to reach the general public with broadcasting part of t
 VOEvent example for a Meteor Shower alert at Mars produced by a trail of comet 2006 AR3. The maximum of event is predicted to occur on 2018-09-08T18:25:00.
 
 {\tiny 
-\begin{verbatim}
-<?xml version="1.0" encoding="UTF-8"?>
-<voe:VOEvent ivorn="ivo://vodpc.obspm/imcce/meteorshower/event#MAR_AR3_2018_1102_0::v1.0"
-    role="prediction" version="2.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:voe="http://www.ivoa.net/xml/VOEvent/v2.0"
-    xsi:schemaLocation="http://www.ivoa.net/xml/VOEvent/v2.0 http://www.ivoa.net/xml/VOEvent/VOEvent-v2.0.xsd">
-    <Who>
-        <AuthorIVORN>ivo://vopdc.obspm</AuthorIVORN>
-        <Author>
-           <contactEmail>Jeremie.Vaubaillon@obspm.fr</contactEmail>
-           <contactPhone>+33-14051 2264</contactPhone>
-           <contactName>Jeremie Vaubaillon</contactName> 
-        </Author>
-        <Date>2018-10-31T18:27:47.157580Z</Date>
-    </Who>
-    <What>
-        <Description>Prediction of a meteor shower produced by a meteoroid stream from 2006 AR3 at Mars</Description>
-        <Reference  uri="http://cdsads.u-strasbg.fr/abs/2017P%26SS..143...78V" meaning="reference publication for prediction" type="string" />
-        <Group name="source">
-           <Param name="source_name" value="2006 AR3" ucd="meta.id" dataType="string" utype="epn:target_name"/>
-           <Param name="source_class" value="comet" ucd="meta.id" dataType="string" utype="epn:target_class"/>
-           <Param name="source_region" value="Trail" ucd="meta.id" dataType="string" utype="epn:target_region"/>
-        </Group>
-        <Group name="target">
-           <Param name="target_class" value="planet" ucd="meta.id" dataType="string" utype="epn:target_class"/>
-           <Param name="target_name" value="Mars" ucd="meta.id" dataType="string" utype="epn:target_name"/>
-           <Param name="target_region" value="Atmosphere" ucd="meta.id" dataType="string" utype="epn:target_region"/>
-           <Param name="spatial_frame_type" value="celestial" ucd="meta.code.class;pos.frame" dataType="string" utype="epn:spatial_frame_type"/>
-           <Param name="solar_longitude" value="152.220" ucd="pos.bodyrc.lon" dataType="string" utype="epn:solar_longitude" unit="deg"/>
-           <Param name="ra" value="345.422" ucd="pos.eq.ra" dataType="string" utype="epn:c1" unit="deg"/>
-           <Param name="s_ra" value="0.186" ucd="pos.eq.ra;stat.error" dataType="string" unit="deg"/>
-           <Param name="dec" value="-16.112" ucd="pos.eq.dec" dataType="string" utype="epn:c2" unit="deg"/>
-           <Param name="s_dec" value="0.084" ucd="pos.eq.dec;stat.error" dataType="string" unit="deg"/>
-           <Param name="spatial_origin" value="Mars" ucd="meta.id" dataType="string" utype="stc:AstroCoordSystem.SpaceFrame.ReferencePosition"/>
-           <Param name="time_origin" value="Mars" ucd="meta.id" dataType="string" utype="stc:AstroCoordSystem.TimeFrame.ReferencePosition"/>
-           <Param name="time_scale" value="UTC" ucd="time.scale" dataType="string" utype="epn:time_scale"/>
-           <Param name="space_ref_frame" value="ICRS" ucd="meta.id" dataType="string" utype="stc:AstroCoordSystem.SpaceFrame.SpaceRefFrame"/>
-           <Param name="astroCoordSystemID" value="UTC-ICRS-MARS_C" ucd="meta.id" dataType="string" utype="stc:AstroCoordSystem"/>
-        </Group>
-        <Group name="event">
-           <Param name="event_type" value="Prediction of a meteor shower produced by a meteoroid stream at a planet" ucd="meta.flag" 
-               dataType="string"/>
-           <Param name="event_status" value="median date of tail crossing" ucd="meta.flag" dataType="string"/>
-           <Param name="event_date" value="2018-09-08T18:25:00" ucd="time.epoch" dataType="string"/>
-           <Param name="shower" value="2006AR3ids" ucd="meta.name" dataType="string"/>
-           <Param name="showercode" value="AR3" ucd="meta.id" dataType="string"/>
-           <Param name="prediction_year" value="2018" ucd="time.epoch" dataType="string" unit="yr"/>
-           <Param name="begins_trail" value="1102" ucd="time.start" dataType="string"/>
-           <Param name="end_trail" value="1102" ucd="time.end" dataType="string"/>
-           <Param name="dist0" value="-0.03124" ucd="pos.distance" dataType="string" unit="AU"/>
-           <Param name="v_geo" value="14.782" ucd="pos.veloc" dataType="string" unit="km/s"/>
-           <Param name="s_v" value="0.118" ucd="pos.veloc;stat.error" dataType="string" unit="km/s"/>
-           <Param name="Zhr" value="0." ucd="meta.id" dataType="string"/>
-           <Param name="conf_id" value="SYO0/1CE0.00" ucd="meta.id" dataType="string"/>
-           <Param name="VOCode" value="MAR_AR3_2018_1102_0" ucd="meta.id" dataType="string"/>
-        </Group>
-    </What>
-    <WhereWhen/>
-    <How>
-        <Description>The ephemeris were produced by simluating the ejection of meteoroid from the sunlitt hemisphere of 
-            cometary nuclei, typically from 0 to 3 au, followed by the propagation of orbits of meteoroids in 
-            the Solar System, taking into account the gravitation of the Sun, the 8 planets, Pluto and the Moon, 
-            as well as the radiation pressure and the Poynting-Robertson drag. The showers are predicted when a 
-            planet enters a large enough number of meteoroids, at a distance less than typically 0.01 au.</Description>
-        <Reference uri="http://cdsads.u-strasbg.fr/abs/2017P%26SS..143...78V"/>
-        <Reference uri="https://doi.org/10.1051/0004-6361:20041544"/>
-        <Reference uri="https://doi.org/10.1051/0004-6361:20042626"/>
-    </How>
-    <Why>
-        <Concept>http://astrothesaurus.org/uat/1034</Concept>
-        <Name>Meteor Shower</Name>
-        <Inference relation="associated">
-            <Concept>http://astrothesaurus.org/uat/1035</Concept>
-            <Name>Meteor streams</Name>
-        </Inference>        
-    </Why>
-    <Description>Meteor Shower alert at Mars produced by a trail of 2006 AR3. Maximum of event: 2018-09-08T18:25:00</Description>
-</voe:VOEvent>
-\end{verbatim}
+\verbatiminput{./voevent-meteor.xml}
 }
 
 Possible implementation of the {\tt <WhereWhen>} entity in the Meteor Shower prediction example. This implementation is currently not valid because the \emph{astroCoordSystemID} required here is not in the enumerated list of allowed values in the VOEvent model
@@ -370,66 +292,7 @@ Possible implementation of the {\tt <WhereWhen>} entity in the Meteor Shower pre
 VOEvent example for RWC daily forecast on September 7th 2017.
 
 {\tiny 
-\begin{verbatim}
-<?xml version="1.0" encoding="utf-8"?>
-<voe:VOEvent xmlns:voe="http://www.ivoa.net/xml/VOEvent/v2.0"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   ivorn="ivo://src.pas/ssa/voe/wa2voe/170906wa/0" role="prediction" version="2.0"
-   xsi:schemaLocation="http://www.ivoa.net/xml/VOEvent/v2.0 http://www.ivoa.net/xml/VOEvent/VOEvent-v2.0.xsd">
-   <Who>
-      <AuthorIVORN>ivo://src.pas/organization</AuthorIVORN>
-      <Date>2017-09-06T09:52:31</Date>
-   </Who>
-   <What>
-      <Description>Forecast of Solar-geophysical activity and propagation conditions</Description>
-      <Reference uri="http://rwc.cbk.waw.pl/rwc/170906wa.dre"/>
-      <Group name="Solar activity forecast">
-         <Description>1 day forecasts</Description>
-         <Param name="target_name" value="Sun" ucd="meta.id" utype="epn:target_name" dataType="string"/>
-         <Param name="time_min" value="2017-09-07T00:00:00" ucd="time.start" dataType="string" utype="epn:time_min"/>
-         <Param name="time_max" value="2017-09-08T00:00:00" ucd="time.end" dataType="string" utype="epn:time_max"/>
-         <Param name="activity" ucd="meta.code.class" unit="" value="high(4)" dataType="string"/>
-         <Param name="flares class C probability" ucd="stat.probability" unit="%" value="100"/>
-         <Param name="flares class M probability" ucd="stat.probability" unit="%" value="100"/>
-         <Param name="flares class X probability" ucd="stat.probability" unit="%" value="50"/>
-         <Param name="flares class p probability" ucd="stat.probability" unit="%" value="95"/>
-      </Group>
-      <Group name="Magnetic activity forecast">
-         <Description>1 day forecasts</Description>
-         <Param name="target_name" value="Earth" ucd="meta.id" utype="epn:target_name" dataType="string"/>
-         <Param name="time_min" value="2017-09-07T00:00:00" ucd="time.start" dataType="string" utype="epn:time_min"/>
-         <Param name="time_max" value="2017-09-08T00:00:00" ucd="time.end" dataType="string" utype="epn:time_max"/>
-         <Param name="Kp" ucd="meta.code.class;phys.magfield" unit="" value="5" dataType="string"/>
-      </Group>
-   </What>
-   <WhereWhen/>
-   <How>
-      <Description>Solar-geophysical prediction service RWC Warsaw - Regional Warning Centre of ISES</Description>
-      <Reference uri="http://rwc.cbk.waw.pl"/>
-   </How>
-   <Why importance="1.0" expires="2017-09-07T00:00:00">
-      <Concept>Solar and Geomagnetic Observations</Concept>
-      <Inference probability="1.0">
-         <Name>Solar Activity</Name>
-         <Concept>http://ontology.espas-fp7.eu/phenomenon/SolarActivity</Concept>
-         <Description>
-            Activity    : moderate(3)
-            Flares      : 5 class m, m2.3/1n 17.37-17.51, m3.8 06.33-06.43,
-            : m3.2 04.33-05.07, m4.2 01.03-01.11ut, c5.4 10.13-10.25ut,
-            : 2 class 1, 16 class 0
-         </Description>
-      </Inference>
-      <Inference probability="1.0">
-         <Name>Geomagnetic activity</Name>
-         <Concept>http://ontology.espas-fp7.eu/phenomenon/GeomagneticActivity</Concept>
-         <Description>
-            activity    : low k=2
-            storm       : -
-         </Description>
-      </Inference>
-   </Why>
-</voe:VOEvent>
-\end{verbatim}
+\verbatiminput{voevent-rwc.xml}
 }
 
 \subsection{Example for Solar Wind event at Jupiter}
@@ -437,78 +300,7 @@ VOEvent example for RWC daily forecast on September 7th 2017.
 VOEvent example for Solar Wind dynamic pressure pulses at Jupiter, as modeled by the Tao 1D MHD propagation code \cite{Tao:2005dp}, for October 2018
 
 {\tiny 
-\begin{verbatim}
-<?xml version="1.0"?>
-<voe:VOEvent ivorn="ivo://psws.irap/VOEvent/Tao_Jupiter_2018-10-02T17_34_45::v1.0" role="prediction"
-   version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xmlns:voe="http://www.ivoa.net/xml/VOEvent/v2.0"
-   xsi:schemaLocation="http://www.ivoa.net/xml/VOEvent/v2.0 http://www.ivoa.net/xml/VOEvent/VOEvent-v2.0.xsd">
-   <Who>
-      <AuthorIVORN>ivo://psws</AuthorIVORN>
-      <Author>
-         <contactEmail>Michel.Gangloff@irap.omp.eu</contactEmail>
-         <contactName>Michel Gangloff</contactName>
-      </Author>
-      <Date>2018-10-02T17:34:45</Date>
-   </Who>
-   <What>
-      <Description>Time intervals in which dynamic pressure is greater than 0.08 nPa at Jupiter</Description>
-      <Param name="event_type" value="Solar Wind dynamic pressure pulse" ucd="meta.id"/>
-      <Group name="event">
-         <Param name="tested_parameter" value="Dynamic Pressure" ucd="meta.id" dataType="string"/>
-         <Param name="threshold" value="0.08" ucd="phys.pressure" unit="nPa" dataType="string"/>
-      </Group>
-      <Group name="target">
-         <Param name="target_name" value="Jupiter" ucd="meta.id" utype="epn:target_name"/>
-         <Param name="target_class" value="planet" ucd="meta.id" utype="epn:target_class"/>
-         <Param name="target_region" value="Magnetosphere" ucd="meta.id" utype="epn:target_region"/>
-      </Group>
-      <Table>
-         <Description>Time intervals found by the propagation code</Description>
-         <Field dataType="string" name="Start Time" ucd="time.begin" utype="epn:time_min">
-            <Description>time tag for beginning of interval</Description>
-         </Field>
-         <Field dataType="string" name="Stop Time" ucd="time.end" utype="epn:time_max">
-            <Description>time tag for end of interval</Description>
-         </Field>
-         <Data>
-            <TR>
-               <TD>2018-10-03T10:00:00.000</TD>
-               <TD>2018-10-04T01:00:00.000</TD>
-            </TR>
-            <TR>
-               <TD>2018-10-04T07:00:00.000</TD>
-               <TD>2018-10-04T11:00:00.000</TD>
-            </TR>
-            <TR>
-               <TD>2018-10-08T01:00:00.000</TD>
-               <TD>2018-10-08T07:00:00.000</TD>
-            </TR>
-         </Data>
-      </Table>
-   </What>
-   <WhereWhen/>
-   <How>
-      <Description>This prediction has been computed by the Heliospheric propagation 1D MHD model for solar wind 
-         prediction at planets, probes and comets.
-      </Description>
-      <Reference uri="https://onlinelibrary.wiley.com/doi/10.1029/2004JA010959/abstract"/>
-   </How>
-   <Why>
-      <Inference probability="1.0">
-         <Concept>http://astrothesaurus.org/uat/1534</Concept>
-         <Name>Solar Wind measured at 1 AU</Name>
-         <Reference uri="https://omniweb.gsfc.nasa.gov"/>
-      </Inference>
-      <Inference>
-         <Concept>http://astrothesaurus.org/uat/1966</Concept>
-         <Name>MHD simulation of propagated Solar Wind at Jupiter</Name>
-         <Reference uri="https://onlinelibrary.wiley.com/doi/10.1029/2004JA010959/abstract"/>
-      </Inference>
-   </Why>
-   <Description>3 Solar Pressure pulses predicted at Jupiter between 2018-10-03 and 2018-10-09</Description>
-</voe:VOEvent>
-\end{verbatim}
+\verbatiminput{voevent-tao.xml}
 }
 
 \subsection{Example for a meteor detection}
@@ -516,149 +308,7 @@ VOEvent example for Solar Wind dynamic pressure pulses at Jupiter, as modeled by
 VOEvent example for a meteor detection using the meteor and TLE detection FreeTure \cite{2014pim4.conf...39A} software.
 
 {\tiny 
-\begin{verbatim}
-<?xml version="1.0" encoding="UTF-8"?>
-<voe:VOEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:voe="http://www.ivoa.net/xml/VOEvent/v2.0"
-    xsi:schemaLocation="http://www.ivoa.net/xml/VOEvent/v2.0
-    http://www.ivoa.net/xml/VOEvent/VOEvent-v2.0.xsd"
-    version="2.0" role="test" ivorn="ivo://io.freeture.myobs/meteor_events#123">
-    <Who>
-        <AuthorIVORN>ivo://freeture.io.myobs</AuthorIVORN>
-        <Date>2018-03-20T00:03:21</Date>
-        <Author>
-            <title>FreeTure Meteor VOEvent</title>
-            <contactName>Pinco Pallino</contactName>
-        </Author>
-    </Who>
-    <What>
-        <Group name="source_flux">
-            <Param dataType="float" name="ADU_peak_flux" ucd="phot.count" unit="count"
-                value="0.0015">
-                <Description>Instrumental Peak Flux</Description>
-            </Param>
-            <Param dataType="float" name="cal_peak_mag" ucd="phot.mag" unit="mag" value="10.8">
-                <Description>Calibrated Peak Magnitude</Description>
-            </Param>
-        </Group>
-        <Table name="light_curve">
-            <Description>Detection properties</Description>
-            <Param name="zero_point" dataType="float" ucd="phot.calib;arith.zp" unit="mag" value="23.6"/>
-            <Param name="color_term" dataType="float" ucd="phot.color;arith.diff" unit="mag" value="0.037"/>
-            <Param name="optical_center" dataType="float" ucd="pos.cartesian;pos.wcs.crpix" unit="pixel" value="648,440"/>
-            <Param name="center_coords" dataType="float" ucd="pos.eq;pos.wcs.crval" unit="deg" value="18.34,44.52"/>
-            <Param name="cd_matrix" dataType="float" ucd="pos.angResolution;pos.wcs.cdmatrix" unit="deg/pixel" value="1.17e-1,0,0,1.17e-1"/>
-            <Param name="event_duration" dataType="float" ucd="time.duration" unit="s" value="0.04"/>
-
-            <Field name="x" ucd="pos.cartesian.x;meta.main" dataType="float" unit="pixel"/>
-            <Field name="y" ucd="pos.cartesian.y;meta.main" dataType="float" unit="pixel"/>
-            <Field name="RA" ucd="pos.eq.ra;meta.main" dataType="float" unit="deg"/>
-            <Field name="Dec" ucd="pos.eq.dec;meta.main" dataType="float" unit="deg"/>
-            <Field name="alt" ucd="pos.az.alt;meta.main" dataType="float" unit="deg"/>
-            <Field name="azi" ucd="pos.az.azi;meta.main" dataType="float" unit="deg"/>
-            <Field name="Flux" ucd="phot.count;meta.main" dataType="float" unit="count"/>
-            <Field name="Mag" ucd="phot.mag;meta.main" dataType="float" unit="mag"/>
-            <Field name="Time" ucd="time.epoch;meta.main" dataType="string"/>
-            <Field name="FrameId" ucd="meta.id;meta.main" dataType="int"/>
-            <Data>
-                <TR>
-                    <TD>780.68</TD>
-                    <TD>410.27</TD>
-                    <TD>18.34</TD>
-                    <TD>44.16</TD>
-                    <TD>35.45</TD>
-                    <TD>223.46</TD>
-                    <TD>225.78</TD>
-                    <TD>23.15</TD>
-                    <TD>2018-03-19T23:55:21.2702</TD>
-                    <TD>31</TD>
-                </TR>
-                <TR>
-                    <TD>781.68</TD>
-                    <TD>410.27</TD>
-                    <TD>18.34</TD>
-                    <TD>44.16</TD>
-                    <TD>35.45</TD>
-                    <TD>223.46</TD>
-                    <TD>225.78</TD>
-                    <TD>23.15</TD>
-                    <TD>2018-03-19T23:55:21.2802</TD>
-                    <TD>32</TD>
-                </TR>
-                <TR>
-                    <TD>782.68</TD>
-                    <TD>410.27</TD>
-                    <TD>18.34</TD>
-                    <TD>44.16</TD>
-                    <TD>35.45</TD>
-                    <TD>223.46</TD>
-                    <TD>225.78</TD>
-                    <TD>23.15</TD>
-                    <TD>2018-03-19T23:55:21.2902</TD>
-                    <TD>33</TD>
-                </TR>
-                <TR>
-                    <TD>783.68</TD>
-                    <TD>410.27</TD>
-                    <TD>18.34</TD>
-                    <TD>44.16</TD>
-                    <TD>35.45</TD>
-                    <TD>223.46</TD>
-                    <TD>225.78</TD>
-                    <TD>23.15</TD>
-                    <TD>2018-03-19T23:55:21.3002</TD>
-                    <TD>34</TD>
-                </TR>
-                <TR>
-                    <TD>784.68</TD>
-                    <TD>410.27</TD>
-                    <TD>18.34</TD>
-                    <TD>44.16</TD>
-                    <TD>35.45</TD>
-                    <TD>223.46</TD>
-                    <TD>225.78</TD>
-                    <TD>23.15</TD>
-                    <TD>2018-03-19T23:55:21.3102</TD>
-                    <TD>35</TD>
-                </TR>
-            </Data>
-        </Table>
-    </What>
-    <WhereWhen>
-        <ObsDataLocation>
-            <ObservatoryLocation id="myobs">
-                <AstroCoordSystem id="UTC-GEOD-TOPO"/>
-                <AstroCoords coord_system_id="UTC-GEOD-TOPO">
-                    <Position3D unit="deg deg m">
-                        <Value3>
-                            <C1>248.4056</C1>
-                            <C2>31.9586</C2>
-                            <C3>2158</C3>
-                        </Value3>
-                    </Position3D>
-                </AstroCoords>
-            </ObservatoryLocation>
-            <ObservationLocation>
-                <AstroCoordSystem id="UTC-ICRS-TOPO"/>
-                <AstroCoords coord_system_id="UTC-ICRS-TOPO">
-                    <Time unit="s">
-                        <TimeInstant>
-                            <ISOTime>2018-03-19T23:55:21.3657</ISOTime>
-                        </TimeInstant>
-                    </Time>
-                </AstroCoords>
-            </ObservationLocation>
-        </ObsDataLocation>
-    </WhereWhen>
-    <How>
-        <Description>FreeTure Temporal Detection Method</Description>
-    </How>
-    <Why>
-        <Concept>process.variation.meteor;atmosphere.entry</Concept>
-        <Description>Possible meteor event</Description>
-    </Why>
-</voe:VOEvent>
-\end{verbatim}
+\verbatiminput{voevent-freeture-meteor.xml}
 }
 
 \subsection{Example for a Trans-Luminous Event detection}
@@ -666,76 +316,7 @@ VOEvent example for a meteor detection using the meteor and TLE detection FreeTu
 VOEvent example for a meteor detection using the meteor and TLE detection FreeTure \cite{2014pim4.conf...39A} software.
 
 {\tiny 
-\begin{verbatim}
-<?xml version="1.0" encoding="UTF-8"?>
-<voe:VOEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:voe="http://www.ivoa.net/xml/VOEvent/v2.0"
-    xsi:schemaLocation="http://www.ivoa.net/xml/VOEvent/v2.0 http://www.ivoa.net/xml/VOEvent/VOEvent-v2.0.xsd"
-    version="2.0" role="test" ivorn="ivo://freeture.io.myobs/tle_events#123">
-
-    <Who>
-        <AuthorIVORN>ivo://freeture.io.myobs</AuthorIVORN>
-        <Date>2018-03-20T00:03:21</Date>
-        <Author>
-            <title>FreeTure TLE VOEvent</title>
-            <contactName>Matthieu Garnung</contactName>
-            <contactEmail>matthieu.garnung@cnrs-orleans.fr</contactEmail>
-            <contributor>S.Celestin, sebastien.celestin@cnrs-orleans.fr</contributor>
-        </Author>
-    </Who>
-
-    <What>
-        <Group name="event parameters">
-            <Param dataType="float" name="Median position x" ucd="pos.cartesian.x;meta.main"
-                unit="pixel" value="307.56"/>
-            <Param dataType="float" name="Median position y" ucd="pos.cartesian.y;meta.main"
-                unit="pixel" value="258.97"/>
-        </Group>
-        <Group name="instrument">
-            <Param dataType="string" name="camera_model" ucd="meta.id" value="DMK"/>
-            <Param dataType="string" name="network" ucd="meta.ref" value="mycameranetwork"/>
-            <Param dataType="string" name="sensor_model" ucd="instr.det;meta.id" value="ICX"/>
-            <Param dataType="float" name="pixel_size" ucd="instr.pixel" value="3.5e-6" unit="m"/>
-            <Param dataType="int" name="frame_size" ucd="instr.param" value="1280,960" unit="px"/>
-            <Param dataType="int" name="bit_depth" ucd="instr.param" value="12" unit="bits"/>
-            <Param dataType="string" name="color_flag" ucd="instr.para;meta.code" value="False"/>
-        </Group>
-    </What>
-
-    <WhereWhen>
-        <ObsDataLocation>
-            <ObservatoryLocation id="myobs">
-                <AstroCoordSystem id="UTC-GEOD-TOPO"/>
-                <AstroCoords coord_system_id="UTC-GEOD-TOPO">
-                    <Position3D unit="deg deg m">
-                        <Value3>
-                            <C1>248.4056</C1>
-                            <C2>31.9586</C2>
-                            <C3>2158</C3>
-                        </Value3>
-                    </Position3D>
-                </AstroCoords>
-            </ObservatoryLocation>
-            <ObservationLocation>
-                <AstroCoordSystem id="UTC-ICRS-TOPO"/>
-                <AstroCoords coord_system_id="UTC-ICRS-TOPO">
-                    <Time unit="s">
-                        <TimeInstant>
-                            <ISOTime>2018-03-19T23:55:21.3657</ISOTime>
-                        </TimeInstant>
-                    </Time>
-                </AstroCoords>
-            </ObservationLocation>
-        </ObsDataLocation>
-    </WhereWhen>
-    <How>
-        <Description>DMK camera from mycameranetwork, using ICX sensor.</Description>
-    </How>
-    <Why>
-        <Description>Possible transient luminous event</Description>
-    </Why>
-</voe:VOEvent>
-\end{verbatim}
+\verbatiminput{voevent-freeture-tle.xml}
 }
 
 

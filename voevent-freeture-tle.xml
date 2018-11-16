@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<voe:VOEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:voe="http://www.ivoa.net/xml/VOEvent/v2.0"
+    xsi:schemaLocation="http://www.ivoa.net/xml/VOEvent/v2.0 http://www.ivoa.net/xml/VOEvent/VOEvent-v2.0.xsd"
+    version="2.0" role="test" ivorn="ivo://freeture.io.myobs/tle_events#123">
+
+    <Who>
+        <AuthorIVORN>ivo://freeture.io.myobs</AuthorIVORN>
+        <Date>2018-03-20T00:03:21</Date>
+        <Author>
+            <title>FreeTure TLE VOEvent</title>
+            <contactName>Matthieu Garnung</contactName>
+            <contactEmail>matthieu.garnung@cnrs-orleans.fr</contactEmail>
+            <contributor>S.Celestin, sebastien.celestin@cnrs-orleans.fr</contributor>
+        </Author>
+    </Who>
+
+    <What>
+        <Group name="event parameters">
+            <Param dataType="float" name="Median position x" ucd="pos.cartesian.x;meta.main"
+                unit="pixel" value="307.56"/>
+            <Param dataType="float" name="Median position y" ucd="pos.cartesian.y;meta.main"
+                unit="pixel" value="258.97"/>
+        </Group>
+        <Group name="instrument">
+            <Param dataType="string" name="camera_model" ucd="meta.id" value="DMK"/>
+            <Param dataType="string" name="network" ucd="meta.ref" value="mycameranetwork"/>
+            <Param dataType="string" name="sensor_model" ucd="instr.det;meta.id" value="ICX"/>
+            <Param dataType="float" name="pixel_size" ucd="instr.pixel" value="3.5e-6" unit="m"/>
+            <Param dataType="int" name="frame_size" ucd="instr.param" value="1280,960" unit="px"/>
+            <Param dataType="int" name="bit_depth" ucd="instr.param" value="12" unit="bits"/>
+            <Param dataType="string" name="color_flag" ucd="instr.para;meta.code" value="False"/>
+        </Group>
+    </What>
+
+    <WhereWhen>
+        <ObsDataLocation>
+            <ObservatoryLocation id="myobs">
+                <AstroCoordSystem id="UTC-GEOD-TOPO"/>
+                <AstroCoords coord_system_id="UTC-GEOD-TOPO">
+                    <Position3D unit="deg deg m">
+                        <Value3>
+                            <C1>248.4056</C1>
+                            <C2>31.9586</C2>
+                            <C3>2158</C3>
+                        </Value3>
+                    </Position3D>
+                </AstroCoords>
+            </ObservatoryLocation>
+            <ObservationLocation>
+                <AstroCoordSystem id="UTC-ICRS-TOPO"/>
+                <AstroCoords coord_system_id="UTC-ICRS-TOPO">
+                    <Time unit="s">
+                        <TimeInstant>
+                            <ISOTime>2018-03-19T23:55:21.3657</ISOTime>
+                        </TimeInstant>
+                    </Time>
+                </AstroCoords>
+            </ObservationLocation>
+        </ObsDataLocation>
+    </WhereWhen>
+    <How>
+        <Description>DMK camera from mycameranetwork, using ICX sensor.</Description>
+    </How>
+    <Why>
+        <Description>Possible transient luminous event</Description>
+    </Why>
+</voe:VOEvent>

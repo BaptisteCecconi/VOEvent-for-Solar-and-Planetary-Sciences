@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<voe:VOEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:voe="http://www.ivoa.net/xml/VOEvent/v2.0"
+    xsi:schemaLocation="http://www.ivoa.net/xml/VOEvent/v2.0
+    http://www.ivoa.net/xml/VOEvent/VOEvent-v2.0.xsd"
+    version="2.0" role="test" ivorn="ivo://io.freeture.myobs/meteor_events#123">
+    <Who>
+        <AuthorIVORN>ivo://freeture.io.myobs</AuthorIVORN>
+        <Date>2018-03-20T00:03:21</Date>
+        <Author>
+            <title>FreeTure Meteor VOEvent</title>
+            <contactName>Pinco Pallino</contactName>
+        </Author>
+    </Who>
+    <What>
+        <Group name="source_flux">
+            <Param dataType="float" name="ADU_peak_flux" ucd="phot.count" unit="count"
+                value="0.0015">
+                <Description>Instrumental Peak Flux</Description>
+            </Param>
+            <Param dataType="float" name="cal_peak_mag" ucd="phot.mag" unit="mag" value="10.8">
+                <Description>Calibrated Peak Magnitude</Description>
+            </Param>
+        </Group>
+        <Table name="light_curve">
+            <Description>Detection properties</Description>
+            <Param name="zero_point" dataType="float" ucd="phot.calib;arith.zp" unit="mag" value="23.6"/>
+            <Param name="color_term" dataType="float" ucd="phot.color;arith.diff" unit="mag" value="0.037"/>
+            <Param name="optical_center" dataType="float" ucd="pos.cartesian;pos.wcs.crpix" unit="pixel" value="648,440"/>
+            <Param name="center_coords" dataType="float" ucd="pos.eq;pos.wcs.crval" unit="deg" value="18.34,44.52"/>
+            <Param name="cd_matrix" dataType="float" ucd="pos.angResolution;pos.wcs.cdmatrix" unit="deg/pixel" value="1.17e-1,0,0,1.17e-1"/>
+            <Param name="event_duration" dataType="float" ucd="time.duration" unit="s" value="0.04"/>
+
+            <Field name="x" ucd="pos.cartesian.x;meta.main" dataType="float" unit="pixel"/>
+            <Field name="y" ucd="pos.cartesian.y;meta.main" dataType="float" unit="pixel"/>
+            <Field name="RA" ucd="pos.eq.ra;meta.main" dataType="float" unit="deg"/>
+            <Field name="Dec" ucd="pos.eq.dec;meta.main" dataType="float" unit="deg"/>
+            <Field name="alt" ucd="pos.az.alt;meta.main" dataType="float" unit="deg"/>
+            <Field name="azi" ucd="pos.az.azi;meta.main" dataType="float" unit="deg"/>
+            <Field name="Flux" ucd="phot.count;meta.main" dataType="float" unit="count"/>
+            <Field name="Mag" ucd="phot.mag;meta.main" dataType="float" unit="mag"/>
+            <Field name="Time" ucd="time.epoch;meta.main" dataType="string"/>
+            <Field name="FrameId" ucd="meta.id;meta.main" dataType="int"/>
+            <Data>
+                <TR>
+                    <TD>780.68</TD>
+                    <TD>410.27</TD>
+                    <TD>18.34</TD>
+                    <TD>44.16</TD>
+                    <TD>35.45</TD>
+                    <TD>223.46</TD>
+                    <TD>225.78</TD>
+                    <TD>23.15</TD>
+                    <TD>2018-03-19T23:55:21.2702</TD>
+                    <TD>31</TD>
+                </TR>
+                <TR>
+                    <TD>781.68</TD>
+                    <TD>410.27</TD>
+                    <TD>18.34</TD>
+                    <TD>44.16</TD>
+                    <TD>35.45</TD>
+                    <TD>223.46</TD>
+                    <TD>225.78</TD>
+                    <TD>23.15</TD>
+                    <TD>2018-03-19T23:55:21.2802</TD>
+                    <TD>32</TD>
+                </TR>
+                <TR>
+                    <TD>782.68</TD>
+                    <TD>410.27</TD>
+                    <TD>18.34</TD>
+                    <TD>44.16</TD>
+                    <TD>35.45</TD>
+                    <TD>223.46</TD>
+                    <TD>225.78</TD>
+                    <TD>23.15</TD>
+                    <TD>2018-03-19T23:55:21.2902</TD>
+                    <TD>33</TD>
+                </TR>
+                <TR>
+                    <TD>783.68</TD>
+                    <TD>410.27</TD>
+                    <TD>18.34</TD>
+                    <TD>44.16</TD>
+                    <TD>35.45</TD>
+                    <TD>223.46</TD>
+                    <TD>225.78</TD>
+                    <TD>23.15</TD>
+                    <TD>2018-03-19T23:55:21.3002</TD>
+                    <TD>34</TD>
+                </TR>
+                <TR>
+                    <TD>784.68</TD>
+                    <TD>410.27</TD>
+                    <TD>18.34</TD>
+                    <TD>44.16</TD>
+                    <TD>35.45</TD>
+                    <TD>223.46</TD>
+                    <TD>225.78</TD>
+                    <TD>23.15</TD>
+                    <TD>2018-03-19T23:55:21.3102</TD>
+                    <TD>35</TD>
+                </TR>
+            </Data>
+        </Table>
+    </What>
+    <WhereWhen>
+        <ObsDataLocation>
+            <ObservatoryLocation id="myobs">
+                <AstroCoordSystem id="UTC-GEOD-TOPO"/>
+                <AstroCoords coord_system_id="UTC-GEOD-TOPO">
+                    <Position3D unit="deg deg m">
+                        <Value3>
+                            <C1>248.4056</C1>
+                            <C2>31.9586</C2>
+                            <C3>2158</C3>
+                        </Value3>
+                    </Position3D>
+                </AstroCoords>
+            </ObservatoryLocation>
+            <ObservationLocation>
+                <AstroCoordSystem id="UTC-ICRS-TOPO"/>
+                <AstroCoords coord_system_id="UTC-ICRS-TOPO">
+                    <Time unit="s">
+                        <TimeInstant>
+                            <ISOTime>2018-03-19T23:55:21.3657</ISOTime>
+                        </TimeInstant>
+                    </Time>
+                </AstroCoords>
+            </ObservationLocation>
+        </ObsDataLocation>
+    </WhereWhen>
+    <How>
+        <Description>FreeTure Temporal Detection Method</Description>
+    </How>
+    <Why>
+        <Concept>process.variation.meteor;atmosphere.entry</Concept>
+        <Description>Possible meteor event</Description>
+    </Why>
+</voe:VOEvent>
