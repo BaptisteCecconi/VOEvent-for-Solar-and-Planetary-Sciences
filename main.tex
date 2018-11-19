@@ -44,7 +44,8 @@
           \and
           C. Marmo\inst{4}
           \and
-          M. Garnung\inst{5}
+          M. B. Garnung\inst{5}
+          \and
           J. Vaubaillon\inst{6}
           \and
           N. Andr\'e\inst{7}
@@ -63,10 +64,10 @@
 	          \email{\href{mailto:tomasik@cbk.waw.pl}{tomasik@cbk.waw.pl}}
 	     \and
 	          GEOPS, CNRS, Universit\'e Paris-Sud, Universit\'e Paris Saclay, Orsay, France\\
-	          \email{\href{mailto:mgarnung@cnrs-orleans.fr}{mgarnung@cnrs-orleans.fr}}
-	     \and
-	          LPL2E, CNRS, Universit\'e d'Orl\'eans, Orl\'eans, France\\
 	          \email{\href{mailto:chiara.marmo@u-psud.fr}{chiara.marmo@u-psud.fr}}
+	     \and
+	          LPC2E, Universit\'e d'Orl\'eans, CNRS,  Orl\'eans, France\\
+	          \email{\href{mailto:mgarnung@cnrs-orleans.fr}{mgarnung@cnrs-orleans.fr}}
 	     \and
 	          IMCCE, Observatoire de Paris, Universit\'e PSL, CNRS, France\\
 	          \email{\href{mailto:jeremie.vaubaillon@obspm.fr}{jeremie.vaubaillon@obspm.fr}}
@@ -216,9 +217,11 @@ Appendix \ref{appendix-xml-voevent-tao} shows a VOEvent based on predefined thre
 \subsection{Optical Detection of Meteors and Transient Luminous Events}
 Optical counterparts of atmospheric transient events are subject of observation and investigation of a growing community. Professional as well as amateur observation networks are established in Europe and abroad to collect data important not only for the scientific investigation of some physical processes but also to assess their possible impacts on Earth's environment. We propose here an implementation of the VOEvent standard to the domain of meteors and Transient Luminous Events (TLEs). A well established standard for real-time alert on those domains will facilitate coordination between networks and simplify the extraction of critical information. This would result in improved collaboration between the amateur community and agencies, e.g., the ESA Fireball Database\footnote{\url{http://neo.ssa.esa.int/search-for-fireballs}}, or the CNES TARANIS (Tool for the Analysis of RAdiations from lightNIngs and Sprites) mission \cite{2007AdSpR..40.1268B}. 
 
-Several camera networks already exist in Europe and around the world, aiming to detect and triangulate shooting stars, compute the trajectory of the possible meteorite and constrain the orbital properties of the meteoroid. Professional and amateur networks (see among others \cite{1998M&PS...33...49O, 2015EPSC...10..800C, 2016pimo.conf...76G, 2013pimo.conf..125J}) working together will allow Europe to be completely independent in obtaining awareness about Earth space environment and existing risks connected to atmospheric reentries. European Space Situational Awareness national programs would benefit from having a common and standard framework for sharing information on meteor and fireball detections, and their contribution to the ESA Fireball Information System would become more efficient. A Virtual Meteor Observatory initiative is already existing in a European context \cite{2008EM&P..102..247K, 2010JIMO...38...10B}, ending up in the adoption of an XML-based communication format. Its connection to VOEvent standard will guarantee its sustainability and interoperability in a larger and well documented context.
+Transient Luminous Events (TLEs) \cite{Pasko2012}  are large-scale optical events occurring in the upper-atmosphere from the top of thunderclouds up to the ionosphere. They are sometimes accompanied by terrestrial gamma-ray flashes (TGFs). TLEs may have important effects in local, regional, and global scales of the atmosphere, but many features of TLEs are not fully understood yet. TARANIS is a CNES satellite project dedicated to the study of impulsive transfers of energy between the Earth atmosphere and the space environment. The TARANIS microsatellite will fly over thousands of TLEs and TGFs for at least two years. Its scientific instruments will be capable of detecting these events and recording their luminous and radiative signatures, as well as the electromagnetic perturbations they set off in Earth's upper atmosphere. Coupling TLEs observation to the already existent meteor detection networks, will allow the observation of TLEs over unprecedented space and time scales \cite{2017AGUFMAE23A2469G}, strongly increasing the probability of joint detection and hence the scientific return of space missions such as TARANIS or the ESA ASIM (Atmosphere-Space Interactions Monitor) instrument onboard the ISS (International Space Station) \cite{2009AIPC.1118....8N}.
 
-Transient Luminous Events (TLEs) are large-scale optical events occurring in the upper-atmosphere from the top of thunderclouds up to the ionosphere. They are sometimes accompanied by terrestrial gamma-ray flashes (TGFs). TLEs may have important effects in local, regional, and global scales of the atmosphere, but many features of TLEs are not fully understood yet. TARANIS is a CNES satellite project dedicated to the study of impulsive transfers of energy between the Earth atmosphere and the space environment. The TARANIS microsatellite will fly over thousands of TLEs and TGFs for at least two years. Its scientific instruments will be capable of detecting these events and recording their luminous and radiative signatures, as well as the electromagnetic perturbations they set off in Earth's upper atmosphere. Coupling TLEs observation to the already existent meteor detection networks, will allow the observation of TLEs over unprecedented space and time scales \cite{2017AGUFMAE23A2469G}, strongly increasing the probability of joint detection and hence the scientific return of space missions such as TARANIS or the ESA ASIM (Atmosphere-Space Interactions Monitor) instrument onboard the ISS (International Space Station) \cite{2009AIPC.1118....8N}.
+Several camera networks already exist in Europe and around the world, aiming to detect and triangulate shooting stars, compute the trajectory of the possible meteorite and constrain the orbital properties of the meteoroid. Professional and amateur networks (see among others \cite{1998M&PS...33...49O,  2013pimo.conf..125J, 2015EPSC...10..800C, 2016pimo.conf...76G}) working together will allow Europe to be completely independent in obtaining awareness about Earth space environment and existing risks connected to atmospheric reentries. European Space Situational Awareness national programs would benefit from having a common and standard framework for sharing information on meteor and fireball detections, and their contribution to the ESA Fireball Information System would become more efficient. A Virtual Meteor Observatory initiative is already existing in a European context \cite{2008EM&P..102..247K, 2010JIMO...38...10B}, ending up in the adoption of an XML-based communication format. Its connection to VOEvent standard will guarantee its sustainability and interoperability in a larger and well documented context.
+
+
 
 Appendices \ref{appendix-xml-voevent-meteor-freeture} and \ref{appendix-xml-voevent-tle-freeture} show preliminary VOEvent messages for a meteor and a TLE detection, planned to be implemented in the meteor and TLE detection FreeTure \cite{2014pim4.conf...39A} software. 
 
